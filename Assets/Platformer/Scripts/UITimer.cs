@@ -8,7 +8,7 @@ public class UITimer : MonoBehaviour
 {
 
     public TextMeshProUGUI timerText;
-    private static int maxTime = 404;
+    private static int maxTime = 14;
     private int wholeSecond;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,10 @@ public class UITimer : MonoBehaviour
         if (wholeSecond < maxTime)
         {
             wholeSecond = (int)Mathf.Floor(Time.realtimeSinceStartup);
+        }
+        else
+        {
+            Debug.Log("You ran out of time");
         }
          
 

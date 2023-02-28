@@ -27,5 +27,6 @@ public class NewBehaviourScript : MonoBehaviour
        Debug.Log("? block was destroyed");
        //coinCounter.GetComponent<CoinCouning>().coinNumber++;
        manager.GetComponent<ScoreManager>().coinCount++;
+       manager.GetComponent<ScoreManager>().points += 100;
     }
 }

@@ -10,6 +10,7 @@ public class LevelParser : MonoBehaviour
     public GameObject brickPrefab;
     public GameObject questionBoxPrefab;
     public GameObject stonePrefab;
+    public GameObject waterPrefab;
     public Transform environmentRoot;
     public float blockSpacing = 5.5f;
 
@@ -64,27 +65,32 @@ public class LevelParser : MonoBehaviour
                 if (letter == 'x')
                 {
                     Vector3 rockLocation = new Vector3(column*blockSpacing, row*blockSpacing, 0);
-                    Debug.Log(rockLocation);
+                    //Debug.Log(rockLocation);
                     Instantiate(rockPrefab,rockLocation, Quaternion.identity);
                     
                 }
                 else if (letter == 'b')
                 {
                     Vector3 brickLocation = new Vector3(column * blockSpacing, row * blockSpacing, 0);
-                    Debug.Log(brickLocation);
+                    //Debug.Log(brickLocation);
                     Instantiate(brickPrefab, brickLocation, Quaternion.identity);
                 }
                 else if (letter == 's')
                 {
                     Vector3 stoneLocation = new Vector3(column * blockSpacing, row * blockSpacing, 0);
-                    Debug.Log(stoneLocation);
+                    //Debug.Log(stoneLocation);
                     Instantiate(stonePrefab, stoneLocation, Quaternion.identity);
                 }
                 else if (letter == '?')
                 {
                     Vector3 questionLocation = new Vector3(column * blockSpacing, row * blockSpacing, 0);
-                    Debug.Log(questionLocation);
+                    //Debug.Log(questionLocation);
                     Instantiate(questionBoxPrefab, questionLocation, Quaternion.identity);
+                }
+                else if (letter == 'w')
+                {
+                    Vector3 waterLocation = new Vector3(column * blockSpacing, row * blockSpacing, 0);
+                    Instantiate(waterPrefab, waterLocation, Quaternion.identity);
                 }
                 // Todo - Instantiate a new GameObject that matches the type specified by letter
                 // Todo - Position the new GameObject at the appropriate location by using row and column
